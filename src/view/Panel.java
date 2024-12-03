@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Panel extends  JPanel {
-    private JTextField input1;
-    private  JTextField input2;
-    private JTextField result;
-    private  JComboBox<String> operator;
-    private  JButton calculate;
+    private final JTextField input1;
+    private final JTextField input2;
+    private final JTextField result;
+    private final JComboBox<String> operator;
+    private final JButton calculate;
 
     public Panel(){
         setLayout(new GridLayout(2 ,1));
@@ -40,20 +40,20 @@ public class Panel extends  JPanel {
         add(resultPanel);
     }
 
-    public void setResult(JTextField result) {
-        this.result = result;
+    public void setResult(String resultText) {
+        result.setText(resultText);
     }
 
-    public JTextField getInput1() {
-        return input1;
+    public String getInput1() {
+        return input1.getText();
     }
 
-    public JTextField getInput2() {
-        return input2;
+    public String getInput2() {
+        return input2.getText();
     }
 
-    public JComboBox<String> getOperator() {
-        return operator;
+    public String getOperator() {
+        return (String) operator.getSelectedItem();
     }
 
     public JButton getCalculate() {
